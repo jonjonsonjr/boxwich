@@ -1,0 +1,24 @@
+{
+  "name": "boxwhich",
+  "version": "0.0.1",
+  "description": "sudo make me a sandwich",
+  "main": "app.js",
+  "dependencies": {
+    "node-config": "0.0.2",
+    "request": "^2.46.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonjonsonjr/boxwich.git"
+  },
+  "author": "Jon Johnson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonjonsonjr/boxwich/issues"
+  },
+  "homepage": "https://github.com/jonjonsonjr/boxwich"
+}
