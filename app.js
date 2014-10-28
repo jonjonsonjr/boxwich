@@ -43,7 +43,7 @@ var base_url = "https://online.jimmyjohns.com";
  *
  * POST "/api/Order/Items":
  *    Leave everything as default. We can map the ModifierGroups from the
- *    reponse into the Modifiers field required for the request.
+ *    previous response into the Modifiers field required for the request.
  *    Add the sandwich to our order.
  *
  * POST "/api/Payment/Payment":
