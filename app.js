@@ -210,7 +210,7 @@ function executeRequests(requests, previous_response) {
 /**
  * Log nicely formatted JSON. This is really hacky.
  *
- * Assume it's already stringified, it that throws an error,
+ * Assume it's already stringified, if that throws an error,
  * just stringify it.
  */
 function log(json) {
