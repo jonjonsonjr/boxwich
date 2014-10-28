@@ -43,3 +43,11 @@ The payment method is set to cash, so don't accidentally run this without cash!
 
 We used a [Raspberry Pi](https://github.com/gabrieltriggs/boxwich) to connect
 the box to the internet.
+
+## Acknowledgements
+
+This project was inspired by [makemeasandwich](https://github.com/travist/makemeasandwich.js).
+I wanted to just use this originally, but I couldn't get it to work, so I rewrote it from scratch.
+
+- [Gabriel Triggs](https://github.com/gabrieltriggs) built the box and wrote the button daemon.
+- [Taylor King](https://github.com/tking0036) was our pocket linux expert and constant entertainment.
