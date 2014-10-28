@@ -35,7 +35,7 @@ To order a sandwich, just run the program.
 
 If you're feeling cheeky, run the binary.
 
-	$ makemeasandwich
+	$ make me a sandwich
 
 The payment method is set to cash, so don't accidentally run this without cash!
 
