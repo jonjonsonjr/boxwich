@@ -59,7 +59,7 @@ var requests = [
   },{
     "url": "/api/Customer/Login",
     "method": "POST",
-    "callback": function () {
+    "prehook": function () {
       return {
         "Email": email,
         "Password": pass,
@@ -69,13 +69,13 @@ var requests = [
   },{
     "url": "/API/Location/ForDeliveryAddress",
     "method": "POST",
-    "callback": function () {
+    "prehook": function () {
       return address;
     }
   },{
     "url": "/api/Order",
     "method": "POST",
-    "callback": function (response) {
+    "prehook": function (response) {
       return {
         "LocationId": response.Locations[0].Id,
         "OrderType": "Delivery",
@@ -85,7 +85,7 @@ var requests = [
   },{
     "url": "/api/Order/DeliveryAddress",
     "method": "PUT",
-    "callback": function () {
+    "prehook": function () {
       return address;
     }
   },{
@@ -94,7 +94,7 @@ var requests = [
   },{
     "url": "/api/Menu/Item/",
     "method": "GET",
-    "callback": function (response) {
+    "prehook": function (response) {
       var menus = JSON.parse(response).Menus;
       var sections = menus[0].Sections;
       var slims = sections[0].MenuItems;
@@ -108,7 +108,7 @@ var requests = [
   },{
     "url": "/api/Order/Items",
     "method": "POST",
-    "callback": function (response) {
+    "prehook": function (response) {
       var item = JSON.parse(response).MenuItem;
       var groups = item.ModifierGroups.map(function (g) {
         return {
@@ -147,7 +147,7 @@ var requests = [
   },{
     "url": "/api/Payment/Payment",
     "method": "POST",
-    "callback": function (response) {
+    "prehook": function (response) {
       var amount = response.Order.Total;
       return {
         "PaymentCode": "CASH",
@@ -167,7 +167,7 @@ executeRequests(requests);
 
 /**
  * Recursively execute each request, passing the previous response into its
- * callback so it can grab anything it needs and format the request body
+ * prehook so it can grab anything it needs and format the request body
  * correctly.
  */
 function executeRequests(requests, previous_response) {
@@ -183,8 +183,8 @@ function executeRequests(requests, previous_response) {
     "url": req.url
   };
 
-  if (typeof req.callback === "function") {
-    var payload = req.callback(previous_response);
+  if (typeof req.prehook === "function") {
+    var payload = req.prehook(previous_response);
     log(payload);
 
     if (req.method === "GET") {
