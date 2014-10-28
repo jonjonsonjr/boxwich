@@ -23,6 +23,22 @@ the button during HackNC, so it was very useful -- it saved me a lot of money.
 The boxwich currently only selects from the Plain Slims because they're much
 cheaper, but that is trivial to change.
 
+## Usage
+
+Edit the config file to add your Jimmy John's account credentials, your
+address, and your phone number. You have to put your phone number in the
+delivery instructions due to a bug.
+
+To order a sandwich, just run the program.
+
+	$ node app.js
+
+If you're feeling cheeky, run the binary.
+
+	$ makemeasandwich
+
+The payment method is set to cash, so don't accidentally run this without cash!
+
 ## Hardware
 
 We used a [Raspberry Pi](https://github.com/gabrieltriggs/boxwich) to connect

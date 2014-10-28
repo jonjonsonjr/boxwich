@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+// Thanks, https://github.com/travist/makemeasandwich.js
+if (process.platform !== 'win32') {
+	if (process.env.USER !== "root") {
+		console.log("What? Make it yourself.");
+		process.exit();
+	}
+}
+
+require('../app.js');
